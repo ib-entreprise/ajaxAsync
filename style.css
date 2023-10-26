@@ -1,9 +1,17 @@
 section {
     margin: 20px;
     padding: 20px;
-    border: solid 1px white;
-
+   border: solid 1px white;
+}
+section .row{
+    margin-top: 10px;
 }
 i{
     font-size: 30px;
+}
+b{
+    color: white;
+}
+.right{
+    text-align: end;
 }

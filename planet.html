@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>space X</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min-2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -24,23 +24,22 @@
         <main>
             <div class="container">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-5">
                         <section>
                             <h4>planets</h4>
                             <select class="form-select" name="" id="">
                                 <option value="population">Par population</option>
                             </select>
                             <br>
-                            <input type="text" class="form-control" placeholder="
+                            <input type="text" id="search" class="form-control" placeholder="
                             faites votre recherche">
                             <ul>
 
                             </ul>
-                            <table class="table  col-12" >
+                            <table class="table table-striped   col-12" >
                                 <thead>
                                     <th>Nom</th>
-                                    <th>Terrain</th>
-                                    <th>url</th>
+                                    <th>Terrain</th>                                    
                                 </thead>
                                 <tbody id="planetsList">
                                     
@@ -50,10 +49,40 @@
                         </section>
 
                     </div>
-                    <div class="col-6">
+                    <div class="col-7">
                         <section>
                             <h4>selectionner le contenu a afficher</h4>
-
+                                <h6>UTAPU</h6>
+                                <p><b>population</b> <span id="population"></span> </p>
+                                
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-2"><i class="fa fa-circle"></i></div>
+                                        <div class="col-10"> <b> Diametre </b> <br><span id="diametre">  </span></div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-2"><i class="fa-solid fa-temperature-three-quarters"></i></div>
+                                        <div class="col-10"> <b> Temperature </b> <br><span id="temperature">   </span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-2"><i class="fa fa-u"></i></div>
+                                        <div class="col-10"> <b> Gravite </b> <br><span id="gravite">   </span></div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col-2"><i class="fa-solid fa-tree"></i></div>
+                                        <div class="col-10"> <b> Terrain </b> <br><span id="terrain">   </span></div>
+                                    </div>
+                                </div>
+                            </div>
                         </section>
                     </div>
                 </div>
