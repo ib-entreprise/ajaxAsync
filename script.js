@@ -13,13 +13,22 @@ let diametre = document.querySelector('#diametre');
 let temperature = document.querySelector('#temperature');
 let terrain = document.querySelector('#terrain');
 let gravite = document.querySelector('#gravite');
+let select = document.querySelector('#select');
 
-
+let defaultOption = document.querySelector('#defaultOption');
 
 
 
 onInit();
 getAllPlanets();
+setDefaultOptionValueTofiter()
+
+async function setDefaultOptionValueTofiter(){
+   let planets = await getData('https://swapi.dev/api/planets/');
+   defaultOption.value = planets.count;
+    console.log(defaultOption.value);
+}
+
 async function onInit(){
     const peoples = await getData('https://swapi.dev/api/people/');
     const planets = await getData('https://swapi.dev/api/planets/');
@@ -39,16 +48,17 @@ async function getData(url) {
 }
 
 function displyDataOnPage(data, item){
-    item.textContent = data;
+    if(item)
+        item.textContent = data;
 }
 
-async function getAllPlanets(){
+async function getAllPlanets(){    
     const planets = await getData('https://swapi.dev/api/planets/');  
     const results = planets.results;
     
      for (let index = 0; index < results.length; index++) {
         const element = results[index];           
-        addPlanetOnTable(element)
+        addPlanetOnTable(element)        
      }
  
     totalPlanets.textContent = planets.count + " resultats";  
@@ -100,17 +110,33 @@ search.addEventListener('keyup', function() {
     planetsList.childNodes.forEach((planet)=>{       
         if (planet.nodeType === Node.ELEMENT_NODE) {
             const planetName = planet.querySelector('td:first-child').textContent.toLowerCase();
-            const planetTerrain = planet.querySelector('td:last-child').textContent.toLowerCase();
-            
+            const planetTerrain = planet.querySelector('td:last-child').textContent.toLowerCase();            
              if ( planetName.includes(searchTerm) ||  planetTerrain.includes(searchTerm)) {
-                planet.style.display = 'flex';   
-                // planet.style.classList.add('right') ;
+                planet.style.display = 'block';                   
             }else{
                 planet.style.display = 'none';                              
              }
         }                
-    });     
+    });    
+});
+function searchFilter(){
+   
+}
+select.addEventListener('change', async (e)=>{    
+        dispalyNemberSeleeeanetList(e);    
 });
 
-search.addEventListener('keyup', dispalyAllPlanetList);
+async function dispalyNemberSeleeeanetList(event){
+    let selectValue = (event.target.value);    
+    planetsList.childNodes.forEach((planet,index)=>{       
+        if (planet.nodeType === Node.ELEMENT_NODE) {
+            const line = planet.querySelectorAll('tr');
+            if(index > selectValue){
+            planet.style.display='none';
+            }else{              
+                planet.style.display='block';            
+            }
+        }
+    });    
+}
 

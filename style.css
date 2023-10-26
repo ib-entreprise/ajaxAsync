@@ -15,3 +15,7 @@ b{
 .right{
     text-align: end;
 }
+
+.hidden{
+    display: none;
+}
