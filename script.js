@@ -50,17 +50,23 @@ function displyDataOnPage(data, item){
         item.textContent = data;
 }
 
-async function getAllPlanets(){    
-    const planets = await getData('https://swapi.dev/api/planets/');  
-    const results = planets.results;
-    
-     for (let index = 0; index < results.length; index++) {
-        const element = results[index];           
-        addPlanetOnTable(element)        
-     }
- 
-    totalPlanets.textContent = planets.count + " resultats";  
+async function getAllPlanets() {
+    let allPlanets = [];
+    let nextUrl = 'https://swapi.dev/api/planets/';
+
+    do {
+        const planets = await getData(nextUrl);
+        allPlanets = allPlanets.concat(planets.results);
+        nextUrl = planets.next;
+    } while (nextUrl);
+
+    allPlanets.forEach((element) => {
+        addPlanetOnTable(element);
+    });
+
+    totalPlanets.textContent = allPlanets.length + " résultats";
 }
+
 function addPlanetOnTable(element){
     let tr = document.createElement('tr');
     let nom = document.createElement('td');
