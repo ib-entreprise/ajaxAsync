@@ -5,28 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>space X</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min-2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
  
-    <header>
-        <h2>header</h2>
+    <header class="bordered">
+        <div class="row">
+            <div class="col-2">
+                <img src="images/logotype.png" alt="">
+            </div>
+            <div class="col-10">
+                <ul id="headerMenu">
+                    <li><span>Acceuil</span></li>
+                    <li><span>Prochaine Misssion</span></li>
+                </ul>
+            </div>
+        </div>
     </header>
      
     <div class="row">
     <div class="col-2">
-        <nav>
-            <h3>Naviation Menu</h3> 
+        <nav class="bordered">
+            <ul id="navMenu">
+                <li>
+                    <i class="fa fa-globe"></i> <br>
+                    <span>Planet</span>
+                </li>
+                <li>
+                    <i class="fa-brands fa-space-awesome"></i> <br>
+                    <span>Vehicules</span>
+                </li>
+                <li>
+                    <i class="fa fa-solid fa-user"></i> <br>
+                    <span>Personne</span>
+                </li>
+            </ul>
         </nav>
     </div>
     <div class="col-10">
         <main>
             <div class="container">
-                <section>
-                    <h2>About The Univers</h2>
+                <section class="bordered" id="homeSection">
+                    <h4>About The Univers</h4>
+                    <p>bienvenu sur <b>ABOUT THE UNIVERS</b> pour decouvrir toutes nos 
+                    decouvertes a propos du monde qui nous entoure</p>
                 </section>
-                <section>
+                <br>
+                <section class="bordered">
                     <h2>Les Chiffres</h2>
                     <p>Nous nous efforcons de chiffrer toutes nos trouvailles pour vous les partager autant
                         que possible.

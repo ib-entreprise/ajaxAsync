@@ -25,8 +25,7 @@ setDefaultOptionValueTofiter()
 
 async function setDefaultOptionValueTofiter(){
    let planets = await getData('https://swapi.dev/api/planets/');
-   defaultOption.value = planets.count;
-    console.log(defaultOption.value);
+   defaultOption.value = planets.count;    
 }
 
 async function onInit(){
@@ -47,8 +46,7 @@ async function getData(url) {
     return data;
 }
 
-function displyDataOnPage(data, item){
-    if(item)
+function displyDataOnPage(data, item){    
         item.textContent = data;
 }
 
@@ -112,7 +110,7 @@ search.addEventListener('keyup', function() {
             const planetName = planet.querySelector('td:first-child').textContent.toLowerCase();
             const planetTerrain = planet.querySelector('td:last-child').textContent.toLowerCase();            
              if ( planetName.includes(searchTerm) ||  planetTerrain.includes(searchTerm)) {
-                planet.style.display = 'block';                   
+                planet.style.display = 'table-row';                   
             }else{
                 planet.style.display = 'none';                              
              }
@@ -134,7 +132,7 @@ async function dispalyNemberSeleeeanetList(event){
             if(index > selectValue){
             planet.style.display='none';
             }else{              
-                planet.style.display='block';            
+                planet.style.display='table-row';            
             }
         }
     });    

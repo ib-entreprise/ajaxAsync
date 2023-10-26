@@ -10,14 +10,39 @@
 </head>
 <body>
  
-    <header>
-        <h2>header page planet</h2>
+    <header class="bordered ">
+        <div class="row">
+            <div class="col-2">
+                <a href="index.html">
+                    <img src="images/logotype.png" alt="">
+                </a>
+            </div>
+            <div class="col-10">
+                <ul id="headerMenu">
+                    <li><span>Acceuil</span></li>
+                    <li><span>Prochaine Misssion</span></li>
+                </ul>
+            </div>
+        </div>
     </header>
      
     <div class="row">
     <div class="col-2">
-        <nav>
-            <h3>Naviation Menu</h3> 
+        <nav class="bordered">
+            <ul id="navMenu">
+                <li>
+                    <i class="fa fa-globe"></i> <br>
+                    <span>Planet</span>
+                </li>
+                <li>
+                    <i class="fa-brands fa-space-awesome"></i> <br>
+                    <span>Vehicules</span>
+                </li>
+                <li>
+                    <i class="fa fa-solid fa-user"></i> <br>
+                    <span>Personne</span>
+                </li>
+            </ul>
         </nav>
     </div>
     <div class="col-10">
@@ -25,7 +50,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-5">
-                        <section>
+                        <section class="bordered">
                             <h4>planets</h4>
                             <select class="form-select" name="" id="select">
                                 <option value="1" id="defaultOption">par population</option>
@@ -55,7 +80,7 @@
 
                     </div>
                     <div class="col-7">
-                        <section>
+                        <section class="bordered">
                             <h4>selectionner le contenu a afficher</h4>
                                 <h6>UTAPU</h6>
                                 <p><b>population</b> <span id="population"></span> </p>

@@ -1,8 +1,10 @@
-section {
+
+.bordered{
     margin: 20px;
     padding: 20px;
    border: solid 1px white;
 }
+
 section .row{
     margin-top: 10px;
 }
@@ -15,7 +17,47 @@ b{
 .right{
     text-align: end;
 }
+navMenu {
+    display: flex;
+}
+#navMenu li {
+    text-align: center;
+    list-style: none;
+    font-size: 25px;
+    margin-bottom: 50px;
+}
+#headerMenu {
+    display: flex;
+    
+}
+#headerMenu li {
+    list-style: none;
+    margin-right:  20px;
+    margin-top: 10px; 
+    font-size: 25px;
+}
+#headerMenu{
+    margin-left: 10px;
+}
+header img {
+    width: 300px;
+}
 
-.hidden{
-    display: none;
+ul li a{
+    color: white;
+    text-decoration: none;
+}
+#homeSection {
+    height: 200px;
+    background-image: url(images/lukasz-szramuk-sJLxhnB80nw-unsplash.jpg);
+}
+
+.bordered-top-and-rifght{
+    border-top: solid 2px white;;
+   border-right: solid 1px white;
+   border-bottom: solid 1px white;
+
+}
+nav {
+    position: fixed;
 }
