@@ -136,5 +136,7 @@ async function dispalyNemberSeleeeanetList(event){
             }
         }
     });    
+
+    totalPlanets.textContent = selectValue + " resultats  ";  
 }
 
