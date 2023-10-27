@@ -61,3 +61,72 @@ ul li a{
 nav {
     position: fixed;
 }
+
+a:hover{
+    color: white;
+    text-decoration: dashed;
+    cursor: pointer;
+}
+table{
+    height: 300px;
+    overflow-y: scroll;
+}
+table tbody tr::after{
+    background-color: green;
+    color: white;
+}
+
+small {
+    color: white;
+}
+.fa:hover{
+    color: white;
+}
+.article-container{
+    margin: 20px  60px;
+}
+.article img{
+    /* width: 300px; */
+    height: 300px;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.article img:hover{
+    border-radius: 30px;
+    opacity: 0.7;
+}
+#edit{
+    color: blue;
+}
+#delete{
+    color: red;
+}
+button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+button:hover{
+    background: white;
+    padding:10px 20px ;
+    border-radius: 25px;
+}
+small{
+    color: gray;
+}
+.borderOn{
+    border: solid 1px white;
+}
+#addBlog{
+    background-color: white;
+    color: black;
+    padding: 0 80px;
+    align-items: center;
+    position: relative;
+    left: 40%;
+}
+textarea{
+    /* background-color: purple; */
+    /* color: white */
+}

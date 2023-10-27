@@ -21,6 +21,7 @@
                 <ul id="headerMenu">
                     <li><span>Acceuil</span></li>
                     <li><span>Prochaine Misssion</span></li>
+                    <li><span><a href="blog.html">Blog</a></span></li>
                 </ul>
             </div>
         </div>
@@ -52,14 +53,29 @@
                     <div class="col-5">
                         <section class="bordered">
                             <h4>planets</h4>
-                            <select class="form-select" name="" id="select">
-                                <option value="1" id="defaultOption">par population</option>
-                                <option value="3">0 a 3 elements</option>
-                                <option value="5">0 a 5 elements</option>
-                                <option value="7">0 a 7 elements</option>
-                                <option value="10">0 a 10 lements</option>
-                                <option value="1000">de 0 a 100 elements</option>
-                            </select>
+                            <div class="row">
+                                <div class="col-6">
+                                    <select class="form-select" name="" id="select">
+                                        <option value="1" id="defaultOption">Toute</option>
+                                        <option value="3">0 a 3 elements</option>
+                                        <option value="5">0 a 5 elements</option>
+                                        <option value="7">0 a 7 elements</option>
+                                        <option value="10">0 a 10 lements</option>
+                                        <option value="1000">de 0 a 100 elements</option>
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-select" name="" id="selectPopulation">
+                                        <option value="1" id="">par population</option>
+                                        <option value="3">0 a 3 elements</option>
+                                        <option value="5">0 a 5 elements</option>
+                                        <option value="7">0 a 7 elements</option>
+                                        <option value="10">0 a 10 lements</option>
+                                        <option value="1000">de 0 a 100 elements</option>
+                                    </select>
+                                </div>
+                            </div>
+                           
                             <br>
                             <input type="text" id="search" class="form-control" placeholder="
                             faites votre recherche">
@@ -80,8 +96,10 @@
 
                     </div>
                     <div class="col-7">
-                        <section class="bordered">
-                            <h4>selectionner le contenu a afficher</h4>
+                        <section class="bordered" id="toHide">
+                            <h4>selectionner une planete pour voir son contenu !</h4>
+                        </section>
+                        <section class="bordered" id="toShow">                            
                                 <h6>UTAPU</h6>
                                 <p><b>population</b> <span id="population"></span> </p>
                                 

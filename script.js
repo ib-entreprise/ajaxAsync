@@ -14,14 +14,26 @@ let temperature = document.querySelector('#temperature');
 let terrain = document.querySelector('#terrain');
 let gravite = document.querySelector('#gravite');
 let select = document.querySelector('#select');
+let selectPopulation = document.querySelector('#selectPopulation');
 
 let defaultOption = document.querySelector('#defaultOption');
+let toHide = document.querySelector('#toHide');
+let toShow = document.querySelector('#toShow');
 
-
+ 
 
 onInit();
 getAllPlanets();
-setDefaultOptionValueTofiter()
+let allPlanetsResult = [];
+let allPlanets = [];
+
+console.log(allPlanets);
+
+
+
+setDefaultOptionValueTofiter();
+toShow.style.display = 'none';
+
 
 async function setDefaultOptionValueTofiter(){
    let planets = await getData('https://swapi.dev/api/planets/');
@@ -51,19 +63,17 @@ function displyDataOnPage(data, item){
 }
 
 async function getAllPlanets() {
-    let allPlanets = [];
     let nextUrl = 'https://swapi.dev/api/planets/';
-
     do {
         const planets = await getData(nextUrl);
         allPlanets = allPlanets.concat(planets.results);
         nextUrl = planets.next;
     } while (nextUrl);
 
+    allPlanetsResult = allPlanets.results;
     allPlanets.forEach((element) => {
         addPlanetOnTable(element);
     });
-
     totalPlanets.textContent = allPlanets.length + " résultats";
 }
 
@@ -92,9 +102,17 @@ Oneplanet.forEach((e) => {
 
 
  planetsList.addEventListener('click', async (event) => {
+    toHide.style.display='none';
+    toShow.style.display = 'block';
+
     const target = event.target;
+    
     if (target.closest('.Oneplanet')) {
-        let tr = target.closest('.Oneplanet').id;        
+        let tr = target.closest('.Oneplanet').id;       
+        let line =  target.closest('.Oneplanet');
+       
+        target.closest('.Oneplanet').style.background = "green" ;
+        target.closest('.Oneplanet').style.color = "white" ;
         let planet = await getData(tr);
         displyPlanetDetail(planet);
     }
@@ -123,14 +141,16 @@ search.addEventListener('keyup', function() {
         }                
     });    
 });
-function searchFilter(){
-   
-}
+
 select.addEventListener('change', async (e)=>{    
         dispalyNemberSeleeeanetList(e);    
 });
 
-async function dispalyNemberSeleeeanetList(event){
+selectPopulation.addEventListener('change', async (e)=>{    
+    displayPlanetByPopulation(e);    
+});
+
+async function dispalyNemberSeleeeanetList(event){    
     let selectValue = (event.target.value);    
     planetsList.childNodes.forEach((planet,index)=>{       
         if (planet.nodeType === Node.ELEMENT_NODE) {
@@ -142,7 +162,20 @@ async function dispalyNemberSeleeeanetList(event){
             }
         }
     });    
-
     totalPlanets.textContent = selectValue + " resultats  ";  
 }
+async function displayPlanetByPopulation(event) {
+    let selectValue = event.target.value;
 
+    // Utilisez la variable globale allPlanets ici
+    allPlanets.forEach((planet,index) => {
+        let length = planet['residents'].length;
+        if( length > 0 && length <= selectValue ){
+            console.log(planet);
+        }        
+    });
+
+    // Vous pouvez maintenant mettre en œuvre votre logique de tri par population
+}
+
+ 

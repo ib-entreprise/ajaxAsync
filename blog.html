@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>space X</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.min-2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+ 
+    <header class="bordered">
+        <div class="row">
+            <div class="col-2">
+                <a href="index.html">
+                    <img src="images/logotype.png" alt="">
+                </a>
+            </div>
+            <div class="col-10">
+                <ul id="headerMenu">
+                    <li><span>Acceuil</span></li>
+                    <li><span>Prochaine Misssion</span></li>
+                    <li><span><a href="blog.html">Blog</a></span></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+     
+    <div class="row">
+    <div class="col-2">
+        <nav class="bordered">
+            <ul id="navMenu">
+                <li>
+                    <i class="fa fa-globe"></i> <br>
+                    <span><a href="planet.html">Planet</a></span>
+                </li>
+                <li>
+                    <i class="fa-brands fa-space-awesome"></i> <br>
+                    <span>Vehicules</span>
+                </li>
+                <li>
+                    <i class="fa fa-solid fa-user"></i> <br>
+                    <span>Personne</span>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="col-10">
+        <main>           
+            <div class="alert alert-success" id="alert">l'article a ete ajoute avec success</div>
+            <div class="article-container">
+            <div class="d-flex gap-4 mb-4">                
+                <div class="col-6  borderOn p-3  article">
+                        <h6><b>This is an article</b></h6>
+                        <div class="row">
+                            <img src="images/dylan-taylor-uKtQh_r3ZsY-unsplash.jpg" alt="" >
+                        </div>
+                        <small>this is an article to the rest API</small> 
+                        <button id="edit">Modifier</button>
+                        <button id="delete">Supprimer</button>                    
+                </div>
+                <div class="col-6 borderOn p-3 article ">
+                    <h6><b>This is an article</b></h6>
+                    <div class="row">                    
+                        <img src="images/aldebaran-s-uXchDIKs4qI-unsplash.jpg" alt="">
+                    </div>
+                    <small>this is an article to the rest API</small> 
+                    <button id="edit">Modifier</button>
+                    <button id="delete">Supprimer</button>
+                </div>
+            </div>
+            <div class="d-flex gap-4 mb-4">                
+                <div class="col-6  borderOn p-3  article">
+                        <h6><b>This is an article</b></h6>
+                        <div class="row">
+                            <img src="images/shot-by-cerqueira-0o_GEzyargo-unsplash.jpg" alt="" >
+                        </div>
+                        <small>this is an article to the rest API</small> 
+                        <button id="edit">Modifier</button>
+                        <button id="delete">Supprimer</button>                    
+                </div>
+                <div class="col-6 borderOn p-3 article ">
+                    <h6><b>This is an article</b></h6>
+                    <div class="row">                    
+                        <img src="images/bg.jpg" alt="">
+                    </div>
+                    <small>this is an article to the rest API</small> 
+                    <button id="edit">Modifier</button>
+                    <button id="delete">Supprimer</button>
+                </div>
+            </div>
+            <div class="d-flex gap-4 mb-4">                
+                <div class="col-6  borderOn p-3  article">
+                        <h6><b>This is an article</b></h6>
+                        <div class="row">
+                            <img src="images/alexander-andrews-fsH1KjbdjE8-unsplash.jpg" alt="" >
+                        </div>
+                        <small>this is an article to the rest API</small> 
+                        <button id="edit">Modifier</button>
+                        <button id="delete">Supprimer</button>                    
+                </div>
+                <div class="col-6 borderOn p-3 article ">
+                    <h6><b>This is an article</b></h6>
+                    <div class="row">                    
+                        <img src="images/aldebaran-s-qtRF_RxCAo0-unsplash.jpg" alt="">
+                    </div>
+                    <small>this is an article to the rest API</small> 
+                    <button id="edit">Modifier</button>
+                    <button id="delete">Supprimer</button>
+                </div>
+            </div>
+        </div>
+        
+        <button id="addBlog" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="fa fa-plus"></i>  
+          </button>
+          
+          <!-- Modal CREER  POST-->
+          <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">CREER UN ARTICLE</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="title">Titre</label>
+                    <input type="text" name="title" id="title" class="form-control">
+
+                    <label for="url">Ulr</label>
+                    <input type="text" name="url" id="url" class="form-control">
+                    <label for="contneu">Contenu</label>
+                    <textarea name="contenu" id="contenu"  class="form-control"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                  <a href="blog.html" class="btn btn-primary">POSTER L'ARTICLE</a>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+          
+        </main>
+    </div>
+    </div>
+     
+    <script src="script.js" defer></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>      
+</body>
+</html>
